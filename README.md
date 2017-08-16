@@ -7,8 +7,16 @@
 
 API 示例
 
-def setting(request):
+urlpatterns = [
 
+    url(r'^test/api',showlog_views.testapi),
+    
+    url(r'^test/setting',showlog_views.setting),
+    
+]
+
+def setting(request):
+    
     if request.GET['ip']:
     
         config={ "service": [{'zabbix':'/var/log/zabbix/zabbix_server.log'},{'httpd':'/var/log/httpd/access_log'}]}
