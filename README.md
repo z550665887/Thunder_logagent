@@ -19,11 +19,15 @@ def setting(request):
     
     if request.GET['ip']:
     
+    
         config={ "service": [{'zabbix':'/var/log/zabbix/zabbix_server.log'},{'httpd':'/var/log/httpd/access_log'}]}
+        
         
         return HttpResponse(json.dumps(config))
         
+        
     return HttpResponse()
+    
 
 def testapi(request):
 
